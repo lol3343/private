@@ -1777,6 +1777,7 @@
 			});
 			f1.add( morphConfig, 'naked' ).onChange( function() { naked(); });
 			f1.add( morphConfig, 'bobs', 0, 100 ).onChange( function() { bobsMorph( morphConfig.bobs/100); });
+			f1.add( morphConfig, 'low', 0, 100 ).onChange( function() { bobsMorph( morphConfig.low/100); });
 
 			f1.add( morphConfig, 'sadness', 0, 100 ).onChange( function() { fullMorph("sad", morphConfig.sadness/100); });
 			f1.add( morphConfig, 'anger', 0, 100 ).onChange( function() { fullMorph("anger", morphConfig.anger/100); });
