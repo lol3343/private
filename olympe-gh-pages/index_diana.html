@@ -105,7 +105,6 @@
 			aah: 0, bigaah: 0, ch_j_sh: 0, f_v: 0, i: 0, k: 0, ee: 0,
 			b_m_p: 0, n: 0, oh: 0, r: 0, d_s_t: 0, th: 0, w: 0, eh: 0, ooh_q:0
 		};
-
 		var voiceConfig = {
 			googleVoise : false,
 			rate: 120//, wordgap: 0, pitch: 230, speed: 100 
@@ -1255,9 +1254,9 @@
 		function bobsWalk(){
 			if(animConfig.current === "walk"){
 				time = 0.5;
-				tweenSequencyBobs[0] = TweenLite.to(morphConfig, 0, { low: 0, onUpdate: bobslow });	
-			    tweenSequencyBobs[1] = TweenLite.to(morphConfig, time*0.6, { low: 1, onUpdate: bobslow });
-			    tweenSequencyBobs[2] = TweenLite.to(morphConfig, time*0.4, { low: 0, delay:time*0.4, onUpdate: bobslow, onComplete:bobsWalk });
+				tweenSequencyBobs[0] = TweenLite.to(bobsAnim, 0, { low: 0, onUpdate: bobslow });	
+			    tweenSequencyBobs[1] = TweenLite.to(bobsAnim, time*0.6, { low: 1, onUpdate: bobslow });
+			    tweenSequencyBobs[2] = TweenLite.to(bobsAnim, time*0.4, { low: 0, delay:time*0.4, onUpdate: bobslow, onComplete:bobsWalk });
 
 			}
 		}
@@ -1268,8 +1267,8 @@
 		}
 
 		function bobslow(){
-			body.setWeightByName("low", morphConfig.low);
-			suit.setWeightByName("low", morphConfig.low);
+			body.setWeightByName("low", bobsAnim.low);
+			suit.setWeightByName("low", bobsAnim.low);
 		}
 
 		var normalSuit;
