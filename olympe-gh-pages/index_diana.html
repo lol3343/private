@@ -1255,9 +1255,9 @@
 		function bobsWalk(){
 			if(animConfig.current === "walk"){
 				time = 0.5;
-				tweenSequencyBobs[0] = TweenLite.to(bobsAnim, 0, { low: 0, onUpdate: bobslow });	
-			    tweenSequencyBobs[1] = TweenLite.to(bobsAnim, time*0.6, { low: 1, onUpdate: bobslow });
-			    tweenSequencyBobs[2] = TweenLite.to(bobsAnim, time*0.4, { low: 0, delay:time*0.4, onUpdate: bobslow, onComplete:bobsWalk });
+				tweenSequencyBobs[0] = TweenLite.to(morphConfig, 0, { low: 0, onUpdate: bobslow });	
+			    tweenSequencyBobs[1] = TweenLite.to(morphConfig, time*0.6, { low: 1, onUpdate: bobslow });
+			    tweenSequencyBobs[2] = TweenLite.to(morphConfig, time*0.4, { low: 0, delay:time*0.4, onUpdate: bobslow, onComplete:bobsWalk });
 
 			}
 		}
@@ -1268,8 +1268,8 @@
 		}
 
 		function bobslow(){
-			body.setWeightByName("low", bobsAnim.low);
-			suit.setWeightByName("low", bobsAnim.low);
+			body.setWeightByName("low", morphConfig.low);
+			suit.setWeightByName("low", morphConfig.low);
 		}
 
 		var normalSuit;
